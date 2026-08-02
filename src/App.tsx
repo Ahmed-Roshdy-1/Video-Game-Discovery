@@ -1,6 +1,6 @@
 import { Grid, GridItem } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
-
+import GameGrid from "./components/GameGrid";
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
         </GridItem>
       
       <GridItem bg="yellow.300" area="main">
-        main
+        <GameGrid />
       </GridItem>
 
     </Grid>
