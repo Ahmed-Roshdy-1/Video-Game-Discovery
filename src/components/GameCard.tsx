@@ -1,6 +1,7 @@
 import type { Game } from "@/hooks/useGame";
 import { Card, CardBody, Image, Heading, Text, Badge, HStack } from "@chakra-ui/react";
 import PlatformIconList from "./PlatformIconList";
+import getCroppedImageUrl from "@/services/image-url";
 
 interface Props {
     game: Game;
@@ -9,8 +10,8 @@ interface Props {
 const GameCard = ({ game }: Props) => {
     let badgeColor = game.metacritic > 75 ? "green" : game.metacritic > 50 ? "yellow" : "";
     return (
-        <Card borderRadius='10px' overflow='hidden'>
-            <Image src={game.background_image} alt={game.name}  width='100%' />
+        <Card >
+            <Image src={getCroppedImageUrl(game.background_image)} alt={game.name}  width='100%' />
             <CardBody>
                 <Heading fontSize='2xl' marginBottom={3}>{game.name}</Heading>
                 <HStack justifyContent='space-between'>

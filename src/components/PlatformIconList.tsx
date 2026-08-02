@@ -1,11 +1,8 @@
 import type { Platform } from "@/hooks/useGame";
-import { HStack, Icon, Text } from "@chakra-ui/react";
+import { HStack, Icon } from "@chakra-ui/react";
 import { FaWindows, FaPlaystation, FaXbox, FaApple, FaLinux, FaAndroid } from "react-icons/fa"
 import {MdPhoneIphone} from "react-icons/md"
 import {BsGlobe} from "react-icons/bs"
-
-
-
 
 
 interface Props {
