@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
 import apiClient from "@/services/api-client";
 
-interface Game {
+export interface Platform {
+    id: number;
+    name: string;
+    slug: string;
+}
+export interface Game {
     id: number;
     name: string;
     background_image: string;
+    parent_platforms: { platform: Platform }[];
+    metacritic: number;
 }
 
 interface FetchResponse {
@@ -22,7 +29,10 @@ const useGame = () => {
         const fetchGames = async () => {
             apiClient.get<FetchResponse>("/games", {signal : controller.signal})
                 .then(res => setGames(res.data.results))
-                .catch(err => setError(err.message));
+                .catch(err => {
+                    if(err.name === "CanceledError") return;
+                    setError(err.message)
+                });
         };
         fetchGames();
 
