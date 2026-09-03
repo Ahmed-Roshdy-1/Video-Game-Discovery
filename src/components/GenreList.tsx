@@ -1,9 +1,8 @@
 import useGenres from "@/hooks/useGenres";
-import { Spinner, Text } from "@chakra-ui/react";
 
 
 const GenreList = () => {
-    const {genres, error, isLoading} = useGenres();
+    const {data: genres, error, isLoading} = useGenres();
     return (
        <ul>
         {genres.map(genre => (
