@@ -16,7 +16,7 @@ const GameCard = ({ game }: Props) => {
                 {/* truncate the game name if it is too long */}
                 <Heading fontSize='2xl' marginBottom={3} whiteSpace='nowrap' overflow='hidden' textOverflow='ellipsis'>{game.name}</Heading>
                 <HStack justifyContent='space-between'>
-                    <PlatformIconList platforms={game.parent_platforms.map(p => p.platform)} />
+                    <PlatformIconList platforms={game.parent_platforms?.map(p => p.platform)} />
                     <Badge fontSize='14px' colorScheme={badgeColor} paddingX={2} borderRadius='4px'>{game.metacritic}</Badge>
                 </HStack>
             </CardBody>
