@@ -15,7 +15,7 @@ function App() {
         <NavBar />
       </GridItem>
       
-        <GridItem bg="green.300" area="aside" display={{base : "none", lg : "block"}}>
+        <GridItem area="aside" display={{base : "none", lg : "block"}}>
           <GenreList />
         </GridItem>
       
