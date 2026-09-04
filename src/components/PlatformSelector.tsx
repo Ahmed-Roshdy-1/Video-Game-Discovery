@@ -21,7 +21,7 @@ const PlatformSelector = ({onSelectPlatform, selectedPlatform}: Props) => {
             </MenuButton>
 
             <MenuList>
-                <MenuItem onClick={() => onSelectPlatform(null)} fontWeight={selectedPlatform === null ? "bold" : "normal"}>All Platforms</MenuItem>
+                <MenuItem onClick={() => onSelectPlatform(null as unknown as Platform)} fontWeight={selectedPlatform === null ? "bold" : "normal"}>All Platforms</MenuItem>
                 {platforms.map(platform => (
                     <MenuItem key={platform.id} onClick={() => onSelectPlatform(platform)} fontWeight={platform.id === selectedPlatform?.id ? "bold" : "normal"}>{platform.name}</MenuItem>
                 ))}

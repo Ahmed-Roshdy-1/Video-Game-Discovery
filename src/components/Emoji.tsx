@@ -18,7 +18,7 @@ const Emoji = ({ rating }: Props) => {
 
     return (
         <div>
-            <Image {...emojiMap[rating]} boxSize="25px" marginTop={1} />
+            <Image {...emojiMap[rating as keyof typeof emojiMap]} boxSize="25px" marginTop={1} />
         </div>
     )
 }
