@@ -1,5 +1,5 @@
 import type { Game } from "@/hooks/useGame";
-import { Card, CardBody, Image, Heading, Badge, HStack } from "@chakra-ui/react";
+import { Card, CardBody, Image, Heading, Badge, HStack, useColorModeValue } from "@chakra-ui/react";
 import PlatformIconList from "./PlatformIconList";
 import getCroppedImageUrl from "@/services/image-url";
 import Emoji from "./Emoji";
@@ -11,7 +11,7 @@ interface Props {
 const GameCard = ({ game }: Props) => {
     let badgeColor = game.metacritic > 75 ? "green" : game.metacritic > 50 ? "yellow" : "";
     return (
-        <Card>
+        <Card boxShadow="" border={useColorModeValue("1px solid #e2e2e2", "1px solid #2d2d2d")} borderRadius="xl" overflow="hidden" >
             <Image src={getCroppedImageUrl(game.background_image)} alt={game.name}  width='100%' />
             <CardBody>
                 <HStack justifyContent='space-between' marginBottom={3}>
